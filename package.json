@@ -1,0 +1,21 @@
+{
+  "name": "decarbonization-tool",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "description": "ENERlite Decarbonization Pathways - Visual decision-support tool with admin builder, based on CEC Building Decarbonization Field Study",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "recharts": "^2.12.7"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.0"
+  }
+}
