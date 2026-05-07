@@ -1,37 +1,45 @@
 import React from "react";
 
-export const fontStack = `'Fraunces', Georgia, serif`;
-export const uiStack = `'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif`;
+export const fontStack = `'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`;
+export const uiStack = `'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`;
 export const monoStack = `'JetBrains Mono', ui-monospace, monospace`;
 
 export const COLORS = {
-  bg: "#f5f1ea",
-  bgAlt: "#ebe4d5",
-  ink: "#1c2620",
-  inkSoft: "#4a5450",
-  rule: "#d6cdb8",
-  green: "#2d4a3e",
-  greenSoft: "#456a5a",
-  terracotta: "#c47b50",
-  ochre: "#bda47a",
-  cream: "#faf6ee",
+  bg: "#ffffff",
+  bgAlt: "#f7f9fa",
+  ink: "#3f4858",
+  inkSoft: "#5a6470",
+  rule: "#e3e7ec",
+  green: "#24a39c",
+  greenSoft: "#3fbab3",
+  greenDark: "#1a7d77",
+  navy: "#3f4858",
+  navyDark: "#2b3340",
+  terracotta: "#a8483f",
+  terracottaSoft: "#c56f61",
+  ochre: "#e8b948",
+  sage: "#7fa89f",
+  cream: "#ffffff",
 };
 
+// Map old "green" name to teal so existing code keeps working
+COLORS.greenAlias = COLORS.green;
+
 export const CAT_COLORS = {
-  Reduce: "#a3a380",
-  Recover: "#7d8c5c",
-  Repair: "#bda47a",
-  Replace: "#456a5a",
-  Regenerate: "#c47b50",
-  Bundle: "#2d4a3e",
+  Reduce: "#7fa89f",
+  Recover: "#24a39c",
+  Repair: "#e8b948",
+  Replace: "#3f4858",
+  Regenerate: "#a8483f",
+  Bundle: "#1a7d77",
 };
 
 export function FontLoader() {
   return (
     <style>{`
-      @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,300;1,6..12,400&family=JetBrains+Mono:wght@400;500&display=swap');
       * { box-sizing: border-box; }
-      body { margin: 0; padding: 0; }
+      body { margin: 0; padding: 0; font-family: 'Nunito Sans', sans-serif; }
       input, textarea, select, button { font-family: inherit; }
     `}</style>
   );
