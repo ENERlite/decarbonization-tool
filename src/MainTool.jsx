@@ -146,7 +146,7 @@ function Header({ step, onStep }) {
           </div>
           <h1 style={{ margin: 0, fontFamily: fontStack, fontSize: 32, fontWeight: 400, color: COLORS.ink, letterSpacing: "-0.02em", lineHeight: 1.1 }}>
             Building Decarbonization
-            <span style={{ fontStyle: "italic", color: COLORS.greenSoft }}> Pathways</span>
+            <span style={{ color: COLORS.green, fontWeight: 600 }}> Pathways</span>
           </h1>
         </div>
         <Stepper step={step} onStep={onStep} />
@@ -164,7 +164,7 @@ function BuildingSelect({ buildings, onSelect }) {
         <div style={{ fontFamily: uiStack, fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: COLORS.greenSoft, marginBottom: 16 }}>Step One</div>
         <h2 style={{ fontFamily: fontStack, fontSize: 44, fontWeight: 400, margin: "0 0 16px", color: COLORS.ink, letterSpacing: "-0.02em", lineHeight: 1.1 }}>
           {buildings.length} building{buildings.length === 1 ? "" : "s"}.<br />
-          <span style={{ fontStyle: "italic", color: COLORS.greenSoft }}>{buildings.length} pathway{buildings.length === 1 ? "" : "s"} to net zero.</span>
+          <span style={{ color: COLORS.green, fontWeight: 600 }}>{buildings.length} pathway{buildings.length === 1 ? "" : "s"} to net zero.</span>
         </h2>
         <p style={{ fontFamily: uiStack, fontSize: 16, color: COLORS.inkSoft, lineHeight: 1.6, margin: 0 }}>
           Each building tells a different story about decarbonization. Select one to explore its current performance, retrofit options, and the long-term economics of the path to 2045.
@@ -181,7 +181,7 @@ function BuildingCard({ building, onSelect }) {
   const [hover, setHover] = useState(false);
   return (
     <button onClick={onSelect} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}
-      style={{ background: hover ? COLORS.cream : "transparent", border: `1px solid ${hover ? COLORS.green : COLORS.rule}`, textAlign: "left", padding: 0, cursor: "pointer", transition: "all 0.3s ease", overflow: "hidden", fontFamily: uiStack, display: "flex", flexDirection: "column" }}>
+      style={{ background: COLORS.cream, border: `1px solid ${hover ? COLORS.green : COLORS.rule}`, boxShadow: hover ? "0 8px 24px rgba(31, 139, 133, 0.12)" : "0 1px 3px rgba(63, 72, 88, 0.04)", textAlign: "left", padding: 0, cursor: "pointer", transition: "all 0.3s ease", overflow: "hidden", fontFamily: uiStack, display: "flex", flexDirection: "column" }}>
       <BuildingIllustration type={building.type} id={building.id} />
       <div style={{ padding: "24px 28px 28px", flex: 1, display: "flex", flexDirection: "column" }}>
         <div style={{ fontFamily: uiStack, fontSize: 10, letterSpacing: "0.15em", textTransform: "uppercase", color: COLORS.greenSoft, marginBottom: 10 }}>{building.type}</div>
@@ -344,7 +344,7 @@ function SpecRow({ label, value }) {
 
 function Metric({ label, value, unit, highlight }) {
   return (
-    <div style={{ padding: "16px 18px", background: highlight ? COLORS.cream : "transparent", border: `1px solid ${highlight ? COLORS.green : COLORS.rule}` }}>
+    <div style={{ padding: "16px 18px", background: COLORS.cream, border: `1px solid ${highlight ? COLORS.green : COLORS.rule}`, boxShadow: "0 1px 3px rgba(63, 72, 88, 0.05)" }}>
       <div style={{ fontFamily: uiStack, fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: COLORS.inkSoft, marginBottom: 6 }}>{label}</div>
       <div style={{ fontFamily: fontStack, fontSize: 24, color: COLORS.ink, fontWeight: 400, letterSpacing: "-0.01em" }}>
         {value}{unit && <span style={{ fontSize: 12, color: COLORS.inkSoft, marginLeft: 4, fontFamily: uiStack }}>{unit}</span>}
@@ -370,7 +370,7 @@ function Measures({ building, selected, onToggle, onBack, onNext }) {
       <div style={{ marginBottom: 36 }}>
         <div style={{ fontFamily: uiStack, fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: COLORS.greenSoft, marginBottom: 12 }}>Step Three · Retrofit Measures</div>
         <h2 style={{ fontFamily: fontStack, fontSize: 38, fontWeight: 400, margin: "0 0 12px", color: COLORS.ink, letterSpacing: "-0.02em" }}>
-          Choose your <span style={{ fontStyle: "italic", color: COLORS.greenSoft }}>pathway</span>
+          Choose your <span style={{ color: COLORS.green, fontWeight: 600 }}>pathway</span>
         </h2>
         <p style={{ fontFamily: uiStack, fontSize: 15, color: COLORS.inkSoft, margin: 0, maxWidth: 720, lineHeight: 1.6 }}>
           Measures are organized by the 6R Resilient Retrofit Framework — Reduce, Recover, Repair, Replace, and Regenerate — moving from low-cost operational changes to capital-intensive electrification and renewables.
@@ -388,7 +388,7 @@ function Measures({ building, selected, onToggle, onBack, onNext }) {
           </div>
         ) : null)}
       </div>
-      <div style={{ padding: "16px 20px", background: COLORS.cream, border: `1px solid ${COLORS.rule}`, marginBottom: 32, fontFamily: uiStack, fontSize: 13, color: COLORS.inkSoft, lineHeight: 1.55 }}>
+      <div style={{ padding: "16px 20px", background: COLORS.cream, border: `1px solid ${COLORS.rule}`, boxShadow: "0 1px 3px rgba(63, 72, 88, 0.05)", marginBottom: 32, fontFamily: uiStack, fontSize: 13, color: COLORS.inkSoft, lineHeight: 1.55 }}>
         <strong style={{ color: COLORS.ink }}>{selected.length}</strong> measure{selected.length === 1 ? "" : "s"} selected.
         {selected.length > 1 && !selected.every((id) => building.measures.find((m) => m.id === id)?.isBundle) && (
           <span> Combined results are an <em>approximation</em> using sum-of-deltas — engineered bundles (marked <span style={{ color: COLORS.green, fontWeight: 600 }}>verified</span>) reflect modeled interactions between measures.</span>
@@ -404,7 +404,7 @@ function MeasureCard({ measure, selected, onToggle }) {
   const positive = measure.savings >= 0;
   return (
     <div onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} onClick={onToggle}
-      style={{ background: selected ? COLORS.cream : hover ? "rgba(250, 246, 238, 0.5)" : "transparent", border: `1px solid ${selected ? COLORS.green : COLORS.rule}`, padding: "14px 16px", cursor: "pointer", transition: "all 0.2s ease", position: "relative" }}>
+      style={{ background: selected ? COLORS.cream : hover ? "#fcfdfd" : COLORS.cream, border: `1px solid ${selected ? COLORS.green : COLORS.rule}`, boxShadow: selected ? "0 2px 6px rgba(31, 139, 133, 0.12)" : hover ? "0 2px 4px rgba(63, 72, 88, 0.06)" : "0 1px 2px rgba(63, 72, 88, 0.04)", padding: "14px 16px", cursor: "pointer", transition: "all 0.2s ease", position: "relative" }}>
       <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
         <div style={{ width: 18, height: 18, border: `1.5px solid ${selected ? COLORS.green : COLORS.inkSoft}`, background: selected ? COLORS.green : "transparent", flexShrink: 0, marginTop: 2, display: "flex", alignItems: "center", justifyContent: "center", color: COLORS.cream, fontSize: 11, fontFamily: uiStack, fontWeight: 700 }}>
           {selected && "✓"}
@@ -452,7 +452,7 @@ function Impact({ building, selected, onBack, onReset, onModify }) {
       <div style={{ marginBottom: 40 }}>
         <div style={{ fontFamily: uiStack, fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: COLORS.greenSoft, marginBottom: 12 }}>Step Four · Impact Analysis</div>
         <h2 style={{ fontFamily: fontStack, fontSize: 38, fontWeight: 400, margin: "0 0 12px", color: COLORS.ink, letterSpacing: "-0.02em" }}>
-          Your decarbonization <span style={{ fontStyle: "italic", color: COLORS.greenSoft }}>scenario</span>
+          Your decarbonization <span style={{ color: COLORS.green, fontWeight: 600 }}>scenario</span>
         </h2>
         <div style={{ fontFamily: uiStack, fontSize: 14, color: COLORS.inkSoft }}>
           {building.name} · <strong style={{ color: COLORS.ink }}>{selected.length} measure{selected.length === 1 ? "" : "s"} selected</strong>
@@ -518,7 +518,7 @@ function Impact({ building, selected, onBack, onReset, onModify }) {
 
 function HeadlineMetric({ label, value, sub, accent, large }) {
   return (
-    <div style={{ padding: large ? "24px 24px" : "20px 20px", background: COLORS.cream, borderTop: `3px solid ${accent}` }}>
+    <div style={{ padding: large ? "24px 24px" : "20px 20px", background: COLORS.cream, borderTop: `3px solid ${accent}`, boxShadow: "0 1px 3px rgba(63, 72, 88, 0.06)", border: `1px solid ${COLORS.rule}`, borderTopWidth: 3, borderTopColor: accent }}>
       <div style={{ fontFamily: uiStack, fontSize: 10, letterSpacing: "0.15em", textTransform: "uppercase", color: COLORS.inkSoft, marginBottom: 8 }}>{label}</div>
       <div style={{ fontFamily: fontStack, fontSize: large ? 36 : 30, color: accent, fontWeight: 400, letterSpacing: "-0.02em", lineHeight: 1, marginBottom: 6 }}>{value}</div>
       <div style={{ fontFamily: uiStack, fontSize: 12, color: COLORS.inkSoft }}>{sub}</div>
@@ -528,7 +528,7 @@ function HeadlineMetric({ label, value, sub, accent, large }) {
 
 function ChartCard({ title, subtitle, children }) {
   return (
-    <div style={{ padding: "24px 28px 28px", background: COLORS.cream, border: `1px solid ${COLORS.rule}` }}>
+    <div style={{ padding: "24px 28px 28px", background: COLORS.cream, border: `1px solid ${COLORS.rule}`, boxShadow: "0 1px 3px rgba(63, 72, 88, 0.06)" }}>
       <h3 style={{ fontFamily: fontStack, fontSize: 20, fontWeight: 400, margin: "0 0 4px", color: COLORS.ink, letterSpacing: "-0.01em" }}>{title}</h3>
       <div style={{ fontFamily: uiStack, fontSize: 12, color: COLORS.inkSoft, marginBottom: 20 }}>{subtitle}</div>
       <div style={{ height: 240 }}>{children}</div>
