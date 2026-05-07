@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "1.0",
+  "id": "office",
+  "name": "Large Office Building",
+  "type": "Commercial Office",
+  "location": "San Francisco Bay Area, CA",
+  "yearBuilt": 1970,
+  "floorArea": 700000,
+  "stories": 37,
+  "construction": "Concrete frame, spandrel & glass curtain wall",
+  "occupancy": "80%+ occupied",
+  "notes": "LEED Platinum, ENERGY STAR certified. Two large 53-year-old gas boilers supply 200°F water for VAV space heating. Includes restaurants, a bank, and a 6,500 ft² data center.",
+  "baseline": {
+    "electricityKwh": 4820118,
+    "gasKbtu": 5815202,
+    "peakKw": 1365,
+    "ghgGas": 308,
+    "ghgElec": 0,
+    "eui": 31.8,
+    "annualElecCost": 1364525,
+    "annualGasCost": 133276,
+    "npvElecCost": 34113125,
+    "npvGasCost": 3331910
+  },
+  "measures": [
+    { "id": "controls", "name": "Controls Optimization", "cat": "Repair", "isBundle": false, "elecKwh": 4831646, "peakKw": 1338, "gasKbtu": 5812330, "ghgGas": 308, "ghgElec": 0, "eui": 30.2, "investment": 80507, "npvTotalCost": 37358375, "savings": 86659 },
+    { "id": "dcv", "name": "Demand Control Ventilation", "cat": "Reduce", "isBundle": false, "elecKwh": 4824220, "peakKw": 1353, "gasKbtu": 4656929, "ghgGas": 247, "ghgElec": 0, "eui": 30.1, "investment": 562684, "npvTotalCost": 36696420, "savings": 748614 },
+    { "id": "boiler", "name": "High Efficiency Boiler", "cat": "Replace", "isBundle": false, "elecKwh": 4820118, "peakKw": 1365, "gasKbtu": 5151792, "ghgGas": 273, "ghgElec": 0, "eui": 30.8, "investment": 91208, "npvTotalCost": 37223579, "savings": 221456 },
+    { "id": "hpwh", "name": "Heat Pump Water Heater", "cat": "Replace", "isBundle": false, "elecKwh": 4892283, "peakKw": 1380, "gasKbtu": 5414711, "ghgGas": 287, "ghgElec": 0, "eui": 31.5, "investment": 16277, "npvTotalCost": 37708510, "savings": -263475 },
+    { "id": "solar", "name": "On-Site Solar PV (110 kW)", "cat": "Regenerate", "isBundle": false, "elecKwh": 4619848, "peakKw": 1336, "gasKbtu": 5815202, "ghgGas": 308, "ghgElec": 0, "eui": 30.8, "investment": 339278, "npvTotalCost": 36558589, "savings": 886446 },
+    { "id": "battery", "name": "Battery Storage (1,000 kWh)", "cat": "Regenerate", "isBundle": false, "elecKwh": 4854279, "peakKw": 1346, "gasKbtu": 5815202, "ghgGas": 308, "ghgElec": 0, "eui": 31.9, "investment": 512942, "npvTotalCost": 37441762, "savings": 3273 },
+    { "id": "a2whp", "name": "Air-to-Water Heat Pump (Gas Boost)", "cat": "Replace", "isBundle": false, "elecKwh": 5268134, "peakKw": 1353, "gasKbtu": 2404249, "ghgGas": 127, "ghgElec": 0, "eui": 29.1, "investment": 1351339, "npvTotalCost": 38800371, "savings": -1355337 },
+    { "id": "hrc", "name": "Heat Recovery Chiller", "cat": "Recover", "isBundle": false, "elecKwh": 5178709, "peakKw": 1365, "gasKbtu": 1115019, "ghgGas": 59, "ghgElec": 0, "eui": 26.8, "investment": 1294631, "npvTotalCost": 37186233, "savings": 258801 },
+    { "id": "bundle", "name": "Engineered Bundle (DCV + HRC + HPWH + Schedule Opt.)", "cat": "Bundle", "isBundle": true, "elecKwh": 5316417, "peakKw": 1268, "gasKbtu": 715237, "ghgGas": 38, "ghgElec": 0, "eui": 26.9, "investment": 1954099, "npvTotalCost": 35921053, "savings": 1523981 },
+    { "id": "bundle-solar", "name": "Engineered Bundle + Solar & Battery", "cat": "Bundle", "isBundle": true, "elecKwh": 5155846, "peakKw": 1214, "gasKbtu": 715237, "ghgGas": 38, "ghgElec": 0, "eui": 26.1, "investment": 2806319, "npvTotalCost": 35310469, "savings": 2134565 }
+  ]
+}

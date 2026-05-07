@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "1.0",
+  "id": "retail",
+  "name": "Large Retail Space",
+  "type": "Big-Box Retail",
+  "location": "Santa Clara County, CA",
+  "yearBuilt": 2006,
+  "floorArea": 57000,
+  "stories": 1,
+  "construction": "Tilt-up concrete, R-22 roof / R-16 walls",
+  "occupancy": "Daily 8 AM – 11 PM",
+  "notes": "Single-story big-box store under 2001 energy code. Packaged rooftop units (RTUs) with gas heat. 19-year-old RTUs near replacement. Minimal hot water demand. Ample roof area for solar.",
+  "baseline": {
+    "electricityKwh": 531905,
+    "gasKbtu": 98335,
+    "peakKw": 164,
+    "ghgGas": 11.0,
+    "ghgElec": 117.9,
+    "eui": 33.7,
+    "annualElecCost": 167835,
+    "annualGasCost": 2541,
+    "npvElecCost": 4195866,
+    "npvGasCost": 63523
+  },
+  "measures": [
+    { "id": "new-windows", "name": "Window Replacement", "cat": "Reduce", "isBundle": false, "elecKwh": 529301, "peakKw": 163, "gasKbtu": 100262, "ghgGas": 11.2, "ghgElec": 117.3, "eui": 33.5, "investment": 120077, "npvTotalCost": 4357784, "savings": -98395 },
+    { "id": "window-film", "name": "Window Film", "cat": "Reduce", "isBundle": false, "elecKwh": 530576, "peakKw": 164, "gasKbtu": 99685, "ghgGas": 11.1, "ghgElec": 117.6, "eui": 33.6, "investment": 10086, "npvTotalCost": 4259325, "savings": 64 },
+    { "id": "adv-rtu", "name": "Advanced Rooftop Controls", "cat": "Repair", "isBundle": false, "elecKwh": 451693, "peakKw": 164, "gasKbtu": 79086, "ghgGas": 8.8, "ghgElec": 100.2, "eui": 28.5, "investment": 80415, "npvTotalCost": 3994884, "savings": 264505 },
+    { "id": "roof-ins", "name": "Roof Insulation Upgrade", "cat": "Reduce", "isBundle": false, "elecKwh": 500681, "peakKw": 150, "gasKbtu": 98351, "ghgGas": 11.0, "ghgElec": 111.0, "eui": 31.8, "investment": 205263, "npvTotalCost": 4170160, "savings": 89229 },
+    { "id": "light-ctrl", "name": "Network Lighting Controls", "cat": "Reduce", "isBundle": false, "elecKwh": 488460, "peakKw": 155, "gasKbtu": 109134, "ghgGas": 12.2, "ghgElec": 108.4, "eui": 31.3, "investment": 114369, "npvTotalCost": 4086568, "savings": 172821 },
+    { "id": "rtu-hp", "name": "Rooftop Heat Pumps", "cat": "Replace", "isBundle": false, "elecKwh": 532801, "peakKw": 157, "gasKbtu": 0, "ghgGas": 0, "ghgElec": 118.2, "eui": 32.0, "investment": 136114, "npvTotalCost": 4244061, "savings": 15328 },
+    { "id": "heat-rec", "name": "Heat Recovery (RTU)", "cat": "Recover", "isBundle": false, "elecKwh": 531221, "peakKw": 157, "gasKbtu": 75539, "ghgGas": 8.4, "ghgElec": 117.7, "eui": 33.2, "investment": 232894, "npvTotalCost": 4426538, "savings": -167149 },
+    { "id": "hpwh", "name": "Heat Pump Water Heaters", "cat": "Replace", "isBundle": false, "elecKwh": 530905, "peakKw": 164, "gasKbtu": 99615, "ghgGas": 11.1, "ghgElec": 117.7, "eui": 33.6, "investment": 2318, "npvTotalCost": 4258773, "savings": 616 },
+    { "id": "solar", "name": "Solar PV (110 kW)", "cat": "Regenerate", "isBundle": false, "elecKwh": 307749, "peakKw": 142, "gasKbtu": 98335, "ghgGas": 11.0, "ghgElec": 69.4, "eui": 20.2, "investment": 263050, "npvTotalCost": 3448343, "savings": 811046 },
+    { "id": "battery", "name": "Battery Storage (250 kWh)", "cat": "Regenerate", "isBundle": false, "elecKwh": 537380, "peakKw": 164, "gasKbtu": 98335, "ghgGas": 11.0, "ghgElec": 121.1, "eui": 34.0, "investment": 146206, "npvTotalCost": 4198611, "savings": 60778 },
+    { "id": "bundle", "name": "Engineered Bundle (Insulation + Lighting Ctrl + HPs + Adv. RTU)", "cat": "Bundle", "isBundle": true, "elecKwh": 335096, "peakKw": 121, "gasKbtu": 0, "ghgGas": 0, "ghgElec": 74.6, "eui": 20.1, "investment": 538479, "npvTotalCost": 3384534, "savings": 874855 },
+    { "id": "bundle-solar", "name": "Engineered Bundle + Solar & Battery", "cat": "Bundle", "isBundle": true, "elecKwh": 116153, "peakKw": 94, "gasKbtu": 0, "ghgGas": 0, "ghgElec": 28.8, "eui": 7.0, "investment": 947734, "npvTotalCost": 2743515, "savings": 1515874 }
+  ]
+}
