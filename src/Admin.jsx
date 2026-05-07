@@ -172,7 +172,7 @@ export default function Admin() {
             Building Builder · Admin
           </div>
           <h2 style={{ fontFamily: fontStack, fontSize: 38, fontWeight: 400, margin: "0 0 12px", color: COLORS.ink, letterSpacing: "-0.02em" }}>
-            Add a new <span style={{ fontStyle: "italic", color: COLORS.greenSoft }}>building</span>
+            Add a new <span style={{ color: COLORS.green, fontWeight: 600 }}>building</span>
           </h2>
           <p style={{ fontFamily: uiStack, fontSize: 14, color: COLORS.inkSoft, margin: 0, maxWidth: 720, lineHeight: 1.6 }}>
             Fill in your building's specifications, baseline performance, and the retrofit measures you've modeled. When everything is valid, download the JSON file and add it to the project's <code style={{ background: COLORS.bgAlt, padding: "1px 6px", fontFamily: monoStack, fontSize: 12 }}>public/buildings/</code> folder, then list it in <code style={{ background: COLORS.bgAlt, padding: "1px 6px", fontFamily: monoStack, fontSize: 12 }}>index.json</code>.
@@ -323,7 +323,7 @@ function AdminHeader() {
             Decarbonization Pathways · Admin
           </div>
           <h1 style={{ margin: 0, fontFamily: fontStack, fontSize: 28, fontWeight: 400, color: COLORS.ink, letterSpacing: "-0.02em" }}>
-            Building <span style={{ fontStyle: "italic", color: COLORS.greenSoft }}>Builder</span>
+            Building <span style={{ color: COLORS.green, fontWeight: 600 }}>Builder</span>
           </h1>
         </div>
         <button onClick={() => navigate("")} style={{ background: "transparent", border: `1px solid ${COLORS.rule}`, color: COLORS.inkSoft, padding: "10px 18px", fontFamily: uiStack, fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase", cursor: "pointer", fontWeight: 500 }}>
@@ -404,7 +404,7 @@ function MeasureForm({ index, measure, onUpdate, onRemove, onDuplicate }) {
   const accentColor = CAT_COLORS[measure.cat] || COLORS.green;
 
   return (
-    <div style={{ border: `1px solid ${COLORS.rule}`, borderLeft: `4px solid ${accentColor}`, background: COLORS.cream, marginBottom: 12 }}>
+    <div style={{ border: `1px solid ${COLORS.rule}`, borderLeft: `4px solid ${accentColor}`, background: COLORS.cream, boxShadow: "0 1px 3px rgba(63, 72, 88, 0.06)", marginBottom: 12 }}>
       <div style={{ padding: "14px 18px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, borderBottom: collapsed ? "none" : `1px solid ${COLORS.rule}` }}>
         <div style={{ display: "flex", alignItems: "center", gap: 16, flex: 1, minWidth: 0 }}>
           <span style={{ fontFamily: monoStack, fontSize: 12, color: COLORS.inkSoft, minWidth: 28 }}>#{index + 1}</span>
@@ -489,14 +489,14 @@ function MeasureForm({ index, measure, onUpdate, onRemove, onDuplicate }) {
 function ValidationPanel({ errors, isValid }) {
   if (isValid) {
     return (
-      <div style={{ padding: "16px 20px", background: COLORS.cream, border: `1px solid ${COLORS.green}`, borderLeft: `4px solid ${COLORS.green}` }}>
+      <div style={{ padding: "16px 20px", background: COLORS.cream, border: `1px solid ${COLORS.green}`, borderLeft: `4px solid ${COLORS.green}`, boxShadow: "0 1px 3px rgba(31, 139, 133, 0.08)" }}>
         <div style={{ fontFamily: fontStack, fontSize: 16, color: COLORS.green, marginBottom: 4 }}>✓ Building data is valid</div>
         <div style={{ fontFamily: uiStack, fontSize: 13, color: COLORS.inkSoft }}>Ready to download. The JSON will pass schema validation when loaded by the tool.</div>
       </div>
     );
   }
   return (
-    <div style={{ padding: "16px 20px", background: COLORS.cream, border: `1px solid ${COLORS.terracotta}`, borderLeft: `4px solid ${COLORS.terracotta}` }}>
+    <div style={{ padding: "16px 20px", background: COLORS.cream, border: `1px solid ${COLORS.terracotta}`, borderLeft: `4px solid ${COLORS.terracotta}`, boxShadow: "0 1px 3px rgba(168, 72, 63, 0.08)" }}>
       <div style={{ fontFamily: fontStack, fontSize: 16, color: COLORS.terracotta, marginBottom: 8 }}>{errors.length} item{errors.length === 1 ? "" : "s"} need attention</div>
       <ul style={{ margin: 0, paddingLeft: 20, fontFamily: uiStack, fontSize: 13, color: COLORS.inkSoft, lineHeight: 1.7 }}>
         {errors.slice(0, 10).map((err, i) => <li key={i}>{err}</li>)}
@@ -509,7 +509,7 @@ function ValidationPanel({ errors, isValid }) {
 function DeployInstructions({ buildingId, isValid }) {
   if (!isValid || !buildingId) return null;
   return (
-    <div style={{ marginTop: 48, padding: "28px 32px", background: COLORS.cream, border: `1px solid ${COLORS.rule}` }}>
+    <div style={{ marginTop: 48, padding: "28px 32px", background: COLORS.cream, border: `1px solid ${COLORS.rule}`, boxShadow: "0 1px 3px rgba(63, 72, 88, 0.05)" }}>
       <h3 style={{ fontFamily: fontStack, fontSize: 22, fontWeight: 400, margin: "0 0 16px", color: COLORS.ink, letterSpacing: "-0.01em" }}>
         Next steps to publish
       </h3>
