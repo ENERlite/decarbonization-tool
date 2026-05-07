@@ -5,14 +5,14 @@ export const uiStack = `'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe
 export const monoStack = `'JetBrains Mono', ui-monospace, monospace`;
 
 export const COLORS = {
-  bg: "#ffffff",
-  bgAlt: "#f7f9fa",
+  bg: "#f4f6f8",
+  bgAlt: "#eef1f4",
   ink: "#3f4858",
   inkSoft: "#5a6470",
   rule: "#e3e7ec",
-  green: "#24a39c",
-  greenSoft: "#3fbab3",
-  greenDark: "#1a7d77",
+  green: "#1f8b85",
+  greenSoft: "#3fa39c",
+  greenDark: "#155f5b",
   navy: "#3f4858",
   navyDark: "#2b3340",
   terracotta: "#a8483f",
@@ -22,16 +22,13 @@ export const COLORS = {
   cream: "#ffffff",
 };
 
-// Map old "green" name to teal so existing code keeps working
-COLORS.greenAlias = COLORS.green;
-
 export const CAT_COLORS = {
   Reduce: "#7fa89f",
-  Recover: "#24a39c",
+  Recover: "#1f8b85",
   Repair: "#e8b948",
   Replace: "#3f4858",
   Regenerate: "#a8483f",
-  Bundle: "#1a7d77",
+  Bundle: "#155f5b",
 };
 
 export function FontLoader() {
